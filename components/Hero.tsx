@@ -3,31 +3,8 @@
 import Image from "next/image";
 import PortalTabs from "./PortalTabs";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 export default function Hero() {
-  const [compactDescription, setCompactDescription] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setCompactDescription(window.scrollY > 500);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const descriptionLines = [
-    "Driving Digital Transformation with Microsoft Dynamics 365 & Power Platform",
-    "I specialize in building enterprise-grade CRM solutions that streamline operations, automate complex business processes,",
-    "and deliver exceptional user experiences.",
-    "From Dynamics 365 custom development and Power Pages implementations to enterprise integrations and DevOps-driven deployments,",
-    "I help organizations modernize their platforms with secure, scalable, and future-ready solutions.",
-    "",
-    "Core Technologies: Dynamics 365 CE | Power Platform | Power Pages | Dataverse | Power Automate",
-    "C# | JavaScript | Azure | SharePoint | REST APIs | ALM | CI/CD",
-  ];
 
   return (
     <section className="min-h-screen relative overflow-hidden grid-bg px-6 py-16">
@@ -148,75 +125,13 @@ export default function Hero() {
 
           {/* DESCRIPTION */}
 
-          <motion.div
-            animate={{
-              height: compactDescription ? 40 : "auto",
-              opacity: 1,
-            }}
-            transition={{
-              duration: 0.5,
-              ease: "easeInOut",
-            }}
-            className="
-              overflow-hidden
-              max-w-4xl
-              mb-12
-            "
-          >
-            {compactDescription ? (
-              <motion.p
-                initial={false}
-                animate={{
-                  opacity: 1,
-                }}
-                className="
-                  text-cyan-300
-                  text-lg
-                  md:text-xl
-                  font-semibold
-                "
-              >
-                Driving Digital Transformation with Microsoft Dynamics 365 & Power Platform...
-              </motion.p>
-            ) : (
-              <div
-                className="
-                  text-gray-400
-                  text-lg
-                  md:text-xl
-                  leading-10
-                "
-              >
-                {descriptionLines.map((line, index) => (
-                  <motion.p
-                    key={index}
-                    initial={{
-                      opacity: 0,
-                      y: 8,
-                      filter: "blur(4px)",
-                    }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      filter: "blur(0px)",
-                    }}
-                    transition={{
-                      duration: 0.8,
-                      delay: 0.25 + index * 0.15,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className={
-                      index === 0
-                        ? "text-cyan-300 font-medium"
-                        : ""
-                    }
-                  >
-                    {line}
-                  </motion.p>
-                ))}
-              </div>
-            )}
-          </motion.div>
+          <p className="text-cyan-100 leading-10 text-xl">Driving Digital Transformation with Microsoft Dynamics 365 & Power Platform</p>
+          <p className="text-cyan-100 leading-10 text-xl">I specialize in building enterprise-grade CRM solutions that streamline operations, automate complex business processes,</p>
+          <p className="text-cyan-100 leading-10 text-xl">and deliver exceptional user experiences.</p>
+          <p className="text-cyan-100 leading-10 text-xl">From Dynamics 365 custom development and Power Pages implementations to enterprise integrations and DevOps-driven deployments,</p>
+          <p className="text-cyan-100 leading-10 text-xl">I help organizations modernize their platforms with secure, scalable, and future-ready solutions.</p>
+          <p className="text-cyan-100 leading-10 text-xl">Core Technologies: Dynamics 365 CE | Power Platform | Power Pages | Dataverse | Power Automate</p>
+          <p className="text-cyan-100 leading-10 text-xl">C# | JavaScript | Azure | SharePoint | REST APIs | ALM | CI/CD </p>
 
           {/* TABS */}
 
