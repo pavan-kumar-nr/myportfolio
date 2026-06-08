@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaMicrosoft } from "react-icons/fa";
 
 const tabs = [
   "About",
@@ -637,6 +637,45 @@ export default function PortalTabs() {
 
                   <p className="text-gray-500 text-sm mt-3">
                     View my repositories
+                  </p>
+                </div>
+
+                {/* Microsoft */}
+                <div
+                  className="
+                    bg-slate-900/80
+                    border
+                    border-cyan-500/20
+                    rounded-3xl
+                    p-8
+                    hover:border-cyan-400
+                    transition-all
+                  "
+                >
+                  <div className="flex items-center justify-center gap-3 mb-4">
+                    <FaMicrosoft className="text-cyan-400 text-2xl" />
+
+                    <h3 className="text-white text-2xl font-semibold">
+                     Microsoft
+                    </h3>
+                  </div>
+
+                  <a
+                    href="https://learn.microsoft.com/en-us/users/pavankumarnr-4800/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      text-gray-300
+                      hover:text-cyan-300
+                      transition-colors
+                      break-all
+                    "
+                  >
+                    microsoft.com/pavan-kumar-nr
+                  </a>
+
+                  <p className="text-gray-500 text-sm mt-3">
+                    Microsoft profile
                   </p>
                 </div>
 
